@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DVC DisTrack Backend Holder</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">D</span><div><strong>DVC DisTrack</strong><small>Backend Holder</small></div></div>
+    <div class="nav-label">WORKSPACE</div>
+    <button class="nav active" data-page="overview">▦ <span>Overview</span></button>
+    <button class="nav" data-page="projects">▣ <span>Projects</span></button>
+    <div class="nav-label">DEVELOPMENT</div>
+    <button class="nav" data-page="database">▤ <span>Database builder</span></button>
+    <button class="nav" data-page="api">⌘ <span>API manager</span></button>
+    <button class="nav" data-page="files">▱ <span>File manager</span></button>
+    <button class="nav" data-page="users">♙ <span>Authentication</span></button>
+    <button class="nav" data-page="connections">↗ <span>Website connections</span></button>
+    <div class="nav-label">SYSTEM</div>
+    <button class="nav" data-page="logs">◷ <span>Activity logs</span></button>
+    <button class="nav" data-page="settings">⚙ <span>Settings</span></button>
+    <div class="sidebar-bottom"><span class="status-dot"></span> Prototype mode <small>Not connected to server</small></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div><span class="eyebrow">DVC CONTROL PANEL</span><h1 id="page-title">Overview</h1></div><div class="top-right"><span class="mode">DEMO MODE</span><div class="avatar">DVC</div></div></header>
+    <div class="notice"><strong>Prototype only:</strong> This dashboard currently saves sample data in this browser. It is not yet connected to your Cloudflare Worker, D1, R2 or a live authentication service. Do not enter real passwords, customer data or secrets.</div>
+
+    <section class="page active" id="overview">
+      <div class="welcome"><div><span class="eyebrow">YOUR WORKSPACE</span><h2>Backend operations, in one place.</h2><p>Manage projects, data structures, APIs and connected websites from one control panel.</p></div><button class="primary" data-go="projects">Explore projects ↗</button></div>
+      <div class="stats"><article class="stat"><span>Projects</span><b id="project-count">2</b><small>Demo workspace</small></article><article class="stat"><span>Database tables</span><b id="table-count">3</b><small>Sample structures</small></article><article class="stat"><span>API endpoints</span><b>4</b><small>Example routes</small></article><article class="stat"><span>Connections</span><b>2</b><small>Demo websites</small></article></div>
+      <div class="section-head"><div><span class="eyebrow">WORKSPACE</span><h2>Quick access</h2></div></div>
+      <div class="quick-grid"><button class="quick" data-go="database"><span>▤</span><b>Database builder</b><small>Create a visual data structure</small></button><button class="quick" data-go="api"><span>⌘</span><b>API manager</b><small>Plan routes and permissions</small></button><button class="quick" data-go="files"><span>▱</span><b>File manager</b><small>Organise storage objects</small></button><button class="quick" data-go="connections"><span>↗</span><b>Connect a website</b><small>Prepare a website integration</small></button></div>
+    </section>
+
+    <section class="page" id="projects">
+      <div class="section-head"><div><span class="eyebrow">WORKSPACE</span><h2>Your projects</h2><p>Keep each website or business backend organised separately.</p></div><button class="primary" id="add-project">＋ New project</button></div>
+      <div class="cards" id="project-list"></div>
+    </section>
+
+    <section class="page" id="database">
+      <div class="section-head"><div><span class="eyebrow">DATA LAYER</span><h2>Visual database builder</h2><p>Plan SQL tables and JSON collections. Live database creation is not connected yet.</p></div><button class="primary" id="add-table">＋ New table</button></div>
+      <div class="tabs"><button class="tab active">SQL tables</button><button class="tab">JSON collections</button></div>
+      <div class="panel"><div class="panel-head"><div><b>Data structures</b><small>Example schema designs</small></div><span class="tag">LOCAL PREVIEW</span></div><div id="table-list"></div></div>
+    </section>
+
+    <section class="page" id="api">
+      <div class="section-head"><div><span class="eyebrow">INTEGRATION LAYER</span><h2>API manager</h2><p>Design endpoints that your websites and apps will call.</p></div><button class="primary" id="add-api">＋ Add endpoint</button></div>
+      <div class="panel"><div class="panel-head"><b>Endpoint catalogue</b><span class="tag">EXAMPLES ONLY</span></div><div id="api-list"></div></div>
+    </section>
+
+    <section class="page" id="files">
+      <div class="section-head"><div><span class="eyebrow">OBJECT STORAGE</span><h2>File manager</h2><p>Plan folders and objects for future Cloudflare R2 storage.</p></div><button class="primary" id="add-file">＋ Add sample file</button></div>
+      <div class="panel"><div class="panel-head"><b>Storage browser</b><span class="tag">LOCAL PREVIEW</span></div><div id="file-list"></div></div>
+    </section>
+
+    <section class="page" id="users">
+      <div class="section-head"><div><span class="eyebrow">ACCESS CONTROL</span><h2>User authentication</h2><p>Role and access planning. No real sign-in or password storage is active.</p></div><button class="primary" id="add-user">＋ Add demo user</button></div>
+      <div class="panel"><div class="panel-head"><b>Users and roles</b><span class="tag">SAMPLE DATA</span></div><div id="user-list"></div></div>
+    </section>
+
+    <section class="page" id="connections">
+      <div class="section-head"><div><span class="eyebrow">CONNECTED SERVICES</span><h2>Website connections</h2><p>Register websites that will eventually use your backend API.</p></div><button class="primary" id="add-connection">＋ Add website</button></div>
+      <div class="cards" id="connection-list"></div>
+    </section>
+
+    <section class="page" id="logs">
+      <div class="section-head"><div><span class="eyebrow">SYSTEM MONITORING</span><h2>Activity logs</h2><p>Prototype events from this browser only. Server-side audit logs are not active.</p></div></div>
+      <div class="panel"><div id="log-list"></div></div>
+    </section>
+
+    <section class="page" id="settings">
+      <div class="section-head"><div><span class="eyebrow">CONFIGURATION</span><h2>Settings</h2><p>Workspace preferences and planned service connections.</p></div></div>
+      <div class="panel settings"><label>Workspace name<input value="DVC DisTrack Backend Holder" id="workspace-name"></label><label>Backend provider<input value="Cloudflare Workers (planned)" disabled></label><label>SQL database<input value="Cloudflare D1 (planned)" disabled></label><label>Object storage<input value="Cloudflare R2 (planned)" disabled></label><button class="primary" id="save-settings">Save workspace name</button></div>
+    </section>
+    <footer> DVC DisTrack Backend Holder <span>Prototype build · Cloudflare integration still required</span></footer>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>
