@@ -1,0 +1,23 @@
+JACT Motorcycle project structure
+
+index.html
+about.html
+services.html
+shop.html
+booking.html
+contact.html
+admin-login.html
+admin-dashboard.html
+admin-products.html
+admin-bookings.html
+styles.css
+app.js
+shop.js
+booking.js
+admin-panel.js
+config.js
+schema.sql
+README.md
+assets/
+
+All admin pages are in the repository root. No admin/ directory is used.
